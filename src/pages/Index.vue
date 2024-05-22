@@ -1,6 +1,6 @@
 <template>
   <q-page class="flex justify-center items-center" padding>
-    <posts-list-section />
+    <PostsListSection />
   </q-page>
 </template>
 
