@@ -8,6 +8,8 @@ This guide outlines the process for creating and maintaining Architectural Decis
 
    Copy the ADR template from `docs/adr-template.md` and create a new file in the `docs/adrs/` directory. Name the file in the format `ADR-<number>-<short-title>.md`. For example: `ADR-001-choose-database.md`.
 
+   asdfasfd
+
 2. **Fill Out the Template**
 
    Use the template to document the decision
