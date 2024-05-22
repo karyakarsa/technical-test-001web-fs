@@ -22,7 +22,7 @@
 </template>
 
 <script>
-import leftDrawer from "src/components/organisms/leftDrawer.vue";
+import leftDrawer from "src/components/organisms/LeftDrawer.vue";
 import { supabase } from "src/lib/common/supabaseClient";
 export default {
   components: { leftDrawer },
