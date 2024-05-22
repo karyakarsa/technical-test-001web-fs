@@ -73,8 +73,5 @@ jobs:
         with:
           node-version: 16
 
-      - name: Prepare .env
-        run: cp .env.ci .env.local
-
       - name: Build
         run: yarn build
