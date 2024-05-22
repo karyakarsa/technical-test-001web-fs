@@ -9,8 +9,6 @@ A quasar project for KaryaKarsa technical test for full stack developer candidat
 - [Docker Desktop](https://www.docker.com/products/docker-desktop): For running Supabase container locally
 - [Supabase CLI](https://supabase.com/docs/guides/cli/getting-started?queryGroups=platform&platform=npx): For running Supabase locally
 
-## Stack
-
 ## Install the dependencies
 
 ```bash
