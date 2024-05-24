@@ -1,1 +1,75 @@
 // app global css in SCSS form
+.content-container {
+  max-width: 100%; // Full width on small devices
+  margin: 0 auto;
+
+  // Styles for medium screens
+  @media (min-width: 768px) { // Adjust the breakpoint as needed
+    max-width: 750px; // Width for medium screens
+  }
+
+  // Styles for large screens
+  @media (min-width: 992px) { // Adjust the breakpoint as needed
+    max-width: 970px; // Width for large screens
+  }
+
+  // Styles for extra large screens
+  @media (min-width: 1200px) { // Adjust the breakpoint as needed
+    max-width: 1000px; // Width for extra large screens
+  }
+}
+
+.section-header-detail {
+  .text-h4 {
+    font-size: 1.2em; // Font size on small devices
+
+    // Font size for medium screens
+    @media (min-width: 768px) { // Adjust the breakpoint as needed
+      font-size: 1.5em; // Font size for medium screens
+    }
+
+    // Font size for large screens
+    @media (min-width: 992px) { // Adjust the breakpoint as needed
+      font-size: 1.8em; // Font size for large screens
+    }
+
+    // Font size for extra large screens
+    @media (min-width: 1200px) { // Adjust the breakpoint as needed
+      font-size: 2em; // Font size for extra large screens
+    }
+  }
+
+  .text-subtitle2 {
+    font-size: 0.8em; // Font size on small devices
+
+    // Font size for medium screens
+    @media (min-width: 768px) { // Adjust the breakpoint as needed
+      font-size: 1em; // Font size for medium screens
+    }
+
+    // Font size for large screens
+    @media (min-width: 992px) { // Adjust the breakpoint as needed
+      font-size: 1.2em; // Font size for large screens
+    }
+
+    // Font size for extra large screens
+    @media (min-width: 1200px) { // Adjust the breakpoint as needed
+      font-size: 1.4em; // Font size for extra large screens
+    }
+  }
+}
+
+.section-content{
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+}
+
+.section-protection{
+  height: 200px;
+  background-color: #f2f2f2;
+  margin-bottom: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
