@@ -10,4 +10,4 @@ CREATE TABLE protected_posts (
 -- enable row level security
 ALTER TABLE protected_posts ENABLE ROW LEVEL SECURITY;
 -- create policy
-CREATE POLICY "Enable access protected post only to auhtenticated" ON protected_posts USING (true);
+CREATE POLICY "Enable access protected post only to auhtenticated" ON protected_posts TO authenticated USING (true);
