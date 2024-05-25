@@ -23,7 +23,9 @@
     "@supabase/supabase-js": "^2.43.2",
     "axios": "^1.2.1",
     "core-js": "^3.6.5",
-    "quasar": "^1.0.0"
+    "quasar": "^1.0.0",
+    "dompurify": "3.1.4",
+    "dotenv": "^10.0.0"
   },
   "devDependencies": {
     "@babel/eslint-parser": "^7.13.14",

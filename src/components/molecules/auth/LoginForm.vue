@@ -19,6 +19,14 @@
 <script>
 import { mapActions, mapState } from "vuex";
 export default {
+  name: "LoginForm",
+  props: {
+    redirectTo: {
+      type: String,
+      required: false,
+      default: "",
+    },
+  },
   data() {
     return {
       email: "",
@@ -30,7 +38,11 @@ export default {
   methods: {
     ...mapActions("auth", ["sendMagicLink"]),
     async onSubmit() {
-      const result = await this.sendMagicLink(this.email);
+      console.log(this.redirectTo);
+      const result = await this.sendMagicLink({
+        email: this.email,
+        redirectTo: this.redirectTo,
+      });
 
       if (result) {
         // show toast
