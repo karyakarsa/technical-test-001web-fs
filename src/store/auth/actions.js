@@ -1,10 +1,12 @@
 import { supabase } from "src/lib/common/supabaseClient";
 
-export async function sendMagicLink({ commit }, email) {
+export async function sendMagicLink({ commit }, { email, redirectTo }) {
   commit("setLoading", true);
 
+  console.log(redirectTo);
+
   // get redirect url to origin
-  const emailRedirectTo = window.location.origin;
+  const emailRedirectTo = window.location.origin + redirectTo;
 
   const { error } = await supabase.auth.signInWithOtp({
     email,

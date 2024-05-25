@@ -12,7 +12,7 @@
         </p>
       </q-card-section>
       <q-card-section>
-        <LoginForm />
+        <LoginForm :redirectTo="link" />
       </q-card-section>
     </q-card>
   </q-page>
@@ -25,8 +25,18 @@ import { mapGetters } from "vuex";
 export default {
   components: { LoginForm },
   name: "LoginPage",
+  data() {
+    return {
+      link: "",
+    };
+  },
   computed: {
     ...mapGetters("auth", ["isAuthenticated"]),
+  },
+  beforeRouteEnter(to, from, next) {
+    next((vm) => {
+      vm.link = from.fullPath;
+    });
   },
   watch: {
     isAuthenticated(val) {

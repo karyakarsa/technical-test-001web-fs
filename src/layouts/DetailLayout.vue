@@ -27,7 +27,6 @@
 <script>
 import { mapActions, mapGetters } from "vuex";
 import { supabase } from "src/lib/common/supabaseClient";
-import { logout } from "src/store/auth/mutations";
 export default {
   name: "DetailLayout",
   data() {
