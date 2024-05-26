@@ -27,6 +27,10 @@ export default class Post {
     return this.featuredImages ? this.featuredImages["128"] : null;
   }
 
+  get coverImageUrl() {
+    return this.featuredImages ? this.featuredImages["1024"] : null;
+  }
+
   get url() {
     return `/posts/${this.slug}`;
   }
