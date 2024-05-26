@@ -11,6 +11,7 @@ export default class Post {
   updatedAt;
   exclusive;
   author;
+  needLogin;
 
   constructor(_data) {
     this.id = _data.id;
@@ -25,6 +26,7 @@ export default class Post {
     this.updatedAt = _data.updatedAt;
     this.exclusive = _data.exclusive;
     this.author = _data.author;
+    this.needLogin = _data.needLogin;
   }
 
   get thumbnailUrl() {
@@ -61,6 +63,7 @@ export default class Post {
       updatedAt: json.updated_at,
       exclusive: json.exclusive,
       author: json.author,
+      needLogin: json.needLogin,
     });
   }
 
@@ -82,6 +85,7 @@ export default class Post {
       updated_at: this.updatedAt,
       exclusive: this.exclusive,
       author: this.author,
+      needLogin: this.needLogin,
     };
 
     if (stringify) {

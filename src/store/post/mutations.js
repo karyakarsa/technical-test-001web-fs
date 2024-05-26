@@ -20,5 +20,6 @@ export function setLoading(state, loading) {
 }
 
 export function setError(state, error) {
+  console.log("setError", error);
   state.error = error;
 }
