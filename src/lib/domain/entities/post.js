@@ -9,6 +9,8 @@ export default class Post {
   publishedAt;
   createdAt;
   updatedAt;
+  exclusive;
+  author;
 
   constructor(_data) {
     this.id = _data.id;
@@ -21,6 +23,8 @@ export default class Post {
     this.publishedAt = _data.publishedAt;
     this.createdAt = _data.createdAt;
     this.updatedAt = _data.updatedAt;
+    this.exclusive = _data.exclusive;
+    this.author = _data.author;
   }
 
   get thumbnailUrl() {
@@ -55,6 +59,8 @@ export default class Post {
       publishedAt: json.published_at,
       createdAt: json.created_at,
       updatedAt: json.updated_at,
+      exclusive: json.exclusive,
+      author: json.author,
     });
   }
 
@@ -74,6 +80,8 @@ export default class Post {
       published_at: this.publishedAt,
       created_at: this.createdAt,
       updated_at: this.updatedAt,
+      exclusive: this.exclusive,
+      author: this.author,
     };
 
     if (stringify) {
