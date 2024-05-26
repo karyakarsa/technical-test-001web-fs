@@ -20,6 +20,11 @@ export function setUser(state, user) {
   });
 }
 
+export function setAccessToken(state, accessToken) {
+  state.accessToken = accessToken;
+
+}
+
 export function logout(state) {
   state.user = null;
 }

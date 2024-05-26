@@ -32,8 +32,11 @@ export default {
     supabase.auth.onAuthStateChange((event, session) => {
       if (event == "SIGNED_OUT") {
         this.$store.commit("auth/logout");
+        //reload current page
+        window.location.reload();
       } else {
         if (session && session.user) {
+          this.$store.commit("auth/setAccessToken", session.access_token);
           this.$store.commit("auth/setUser", session.user);
         }
       }

@@ -3,5 +3,6 @@ export default function () {
     loading: false,
     user: null,
     error: null,
+    accessToken: null,
   };
 }

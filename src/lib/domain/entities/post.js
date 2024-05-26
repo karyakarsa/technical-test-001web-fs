@@ -9,6 +9,9 @@ export default class Post {
   publishedAt;
   createdAt;
   updatedAt;
+  exclusive;
+  author;
+  needLogin;
 
   constructor(_data) {
     this.id = _data.id;
@@ -21,10 +24,17 @@ export default class Post {
     this.publishedAt = _data.publishedAt;
     this.createdAt = _data.createdAt;
     this.updatedAt = _data.updatedAt;
+    this.exclusive = _data.exclusive;
+    this.author = _data.author;
+    this.needLogin = _data.needLogin;
   }
 
   get thumbnailUrl() {
     return this.featuredImages ? this.featuredImages["128"] : null;
+  }
+
+  get coverImageUrl() {
+    return this.featuredImages ? this.featuredImages["1024"] : null;
   }
 
   get url() {
@@ -51,6 +61,9 @@ export default class Post {
       publishedAt: json.published_at,
       createdAt: json.created_at,
       updatedAt: json.updated_at,
+      exclusive: json.exclusive,
+      author: json.author,
+      needLogin: json.needLogin,
     });
   }
 
@@ -70,6 +83,9 @@ export default class Post {
       published_at: this.publishedAt,
       created_at: this.createdAt,
       updated_at: this.updatedAt,
+      exclusive: this.exclusive,
+      author: this.author,
+      needLogin: this.needLogin,
     };
 
     if (stringify) {

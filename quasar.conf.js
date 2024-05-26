@@ -10,6 +10,8 @@
 
 const ESLintPlugin = require("eslint-webpack-plugin");
 
+require('dotenv').config()
+
 module.exports = function (/* ctx */) {
   return {
     // https://v1.quasar.dev/quasar-cli/supporting-ts
@@ -43,11 +45,10 @@ module.exports = function (/* ctx */) {
     // Full list of options: https://v1.quasar.dev/quasar-cli/quasar-conf-js#Property%3A-build
     build: {
       env: {
-        SUPABASE_URL: "http://127.0.0.1:54321",
-        SUPABASE_ANON_KEY:
-          "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZS1kZW1vIiwicm9sZSI6ImFub24iLCJleHAiOjE5ODM4MTI5OTZ9.CRXP1A7WOeoJeXxjNni43kdQwgnWNReilDMblYTn_I0",
+        SUPABASE_URL: process.env.SUPABASE_URL,
+        SUPABASE_ANON_KEY: process.env.SUPABASE_ANON_KEY,
       },
-      vueRouterMode: "history", // available values: 'hash', 'history'
+      vueRouterMode: process.env.VUE_ROUTER_MODE || 'history', // available values: 'hash', 'history'
 
       // transpile: false,
 
