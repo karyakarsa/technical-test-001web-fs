@@ -113,7 +113,7 @@ export default {
 
 .posts-detail-image.floated {
   position: relative;
-  .q-img {
+  .q-img, .q-skeleton {
     position: absolute;
     top: -75px;
     right: 30px;

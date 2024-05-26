@@ -1,7 +1,12 @@
 <template>
-  <div v-if="imageUrl == ''"></div>
+  <div v-if="loading">
+    <q-skeleton :height="variableHeight" :width="variableWidth" square />
+  </div>
   <div v-else>
-    <q-img :src="imageUrl" :height="variableHeight" :width="variableWidth" />
+    <div v-if="imageUrl == ''"></div>
+    <div v-else>
+      <q-img :src="imageUrl" :style="{ 'rounded': platform === 'desktop' }" :height="variableHeight" :width="variableWidth" />
+    </div>
   </div>
 </template>
 
@@ -45,3 +50,9 @@ export default {
   },
 };
 </script>
+
+<style lang="scss">
+ .rounded {
+   border-radius: 10px;
+ }
+</style>
