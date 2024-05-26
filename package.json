@@ -30,12 +30,13 @@
     "@quasar/app": "^2.0.0",
     "@quasar/quasar-app-extension-testing": "1",
     "@quasar/quasar-app-extension-testing-unit-jest": "^2.2.3",
+    "dotenv": "^16.4.5",
     "eslint": "^8.57.0",
     "eslint-config-prettier": "^8.1.0",
+    "eslint-plugin-jest": "^24.1.0",
     "eslint-plugin-vue": "^9.0.0",
     "eslint-webpack-plugin": "^2.0.0",
-    "prettier": "^2.5.1",
-    "eslint-plugin-jest": "^24.1.0"
+    "prettier": "^2.5.1"
   },
   "browserslist": [
     "ie >= 11",
