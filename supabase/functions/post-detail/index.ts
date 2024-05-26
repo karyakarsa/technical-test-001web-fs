@@ -13,10 +13,14 @@ const corsHeaders = {
 }
 
 Deno.serve(async (req) => {
+  // cors options handling
   if (req.method === 'OPTIONS') {
     return new Response('ok', { headers: corsHeaders })
   }
+
   const { slug } = await req.json()
+
+  // authenticate user from accesstoken header. Using accesstoken header because Authorization header already reserve by supabase
   const accesstoken = req.headers.get('accesstoken')
   let user = null;
   if (accesstoken) {
@@ -24,12 +28,14 @@ Deno.serve(async (req) => {
     user = data
   }
 
+  // fetch data by slug necessary data from supabase
   const {data: result, error} = await supabaseClient
   .from('posts')
   .select('slug, author, title, content, published_at, exclusive, featured_images')
   .eq('slug', slug)
   .single()
 
+  // when post not found return error
   if (!result) {
     return new Response(JSON.stringify({ error: 'Post not found' }), {
       headers: { ...corsHeaders,'Content-Type': 'application/json' },
@@ -39,8 +45,8 @@ Deno.serve(async (req) => {
 
   const {  exclusive, ...responseData } = result
 
+  // if post is exclusive and user not logged in, return only first 2 blocks
   const needLogin = exclusive && !user
-
   if(needLogin)
     responseData.content.blocks = responseData.content.blocks.filter((block) => ['paragraph','header'].includes(block.type)).slice(0, 2)
 

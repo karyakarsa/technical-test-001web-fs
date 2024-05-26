@@ -13,9 +13,11 @@ const corsHeaders = {
   'Access-Control-Allow-Headers': '*',
 }
 Deno.serve(async (req) => {
+  // cors options handling
   if (req.method === 'OPTIONS') {
     return new Response('ok', { headers: corsHeaders })
   }
+  // fetch data by slug necessary data from supabase
   const { data, error } = await supabaseClient
   .from("posts")
   .select("slug, title, description, featured_images, published_at");
