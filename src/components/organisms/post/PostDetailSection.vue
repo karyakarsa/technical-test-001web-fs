@@ -41,6 +41,7 @@ export default {
   name: "PostDetailSection",
   async mounted() {
     await this.getPostBySlug(this.$route.params.slug);
+    if (!this.post) this.$router.push("/404");
   },
   computed: {
     ...mapState("post", ["post", "loading", "error"]),
