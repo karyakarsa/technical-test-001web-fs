@@ -40,10 +40,7 @@ export default {
   },
   name: "PostDetailSection",
   async mounted() {
-    console.log("loading", this.loading)
     await this.getPostBySlug(this.$route.params.slug);
-    console.log("post", this.post)
-    console.log("loading", this.loading)
   },
   computed: {
     ...mapState("post", ["post", "loading", "error"]),
@@ -87,8 +84,6 @@ export default {
       } else {
         this.mediaQueryPlatform = "desktop";
       }
-
-      console.log("mediaQueryPlatform", this.mediaQueryPlatform);
     },
   },
 };
